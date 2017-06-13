@@ -1,3 +1,7 @@
 output "JDBCConnectionString" {
-  value = "${format("jdbc:oracle:thin:@//%s:%s/%s", aws_db_instance.DBInstance.address, aws_db_instance.DBInstance.port, var.DBName)}"
+  value = "${format("jdbc:oracle:thin:@//%s/%s", aws_db_instance.DBInstance.endpoint, var.DBName)}"
+}
+
+output "DBAdminPassword" {
+  value = "${random_id.DBAdminPassword.id}"
 }

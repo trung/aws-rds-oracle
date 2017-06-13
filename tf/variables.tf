@@ -5,8 +5,10 @@ variable "CommonTags" {
     by = "tf"
   }
 }
-variable "VpcId" {
-  default = ""
+variable "SecurityGroupId" {
+}
+variable "DBAdminUser" {
+  default = "admin"
 }
 variable "DBStorageSize" {
   default = "10"
@@ -28,17 +30,15 @@ variable "DBInstanceType" {
   default = "db.m4.large"
 }
 variable "DBName" {
-  default = ""
+  default = "SampleDB"
 }
 variable "Subnets" {
   type = "list"
-  default = ["default"]
 }
-variable "KmsKeyId" {
-  default = ""
+variable "KmsKeyAlias" {
+
 }
 variable "MonitoringRoleArn" {
-  default = ""
 }
 variable "MultipleAZ" {
   type = "map"
