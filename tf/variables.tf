@@ -15,6 +15,11 @@ variable "DBStorageSize" {
 }
 variable "DBStorageType" {
   default = "standard"
+  description = "standard, gp2 or io1"
+}
+variable "DBProvisionedIops" {
+  default = "1000"
+  description = "Applicable for DBStorageType is io1. Must be an integer multiple of 1000"
 }
 variable "BackupRetention" {
   default = "2"

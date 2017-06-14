@@ -186,5 +186,6 @@ resource "aws_db_instance" "DBInstance" {
   storage_encrypted = "true"
   storage_type = "${var.DBStorageType}"
   vpc_security_group_ids = ["${var.SecurityGroupId}"]
+  iops = "${var.DBStorageType == "io1" ? var.DBProvisionedIops : 0}"
   tags = "${var.CommonTags}"
 }
